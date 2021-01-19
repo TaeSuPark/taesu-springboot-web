@@ -11,7 +11,7 @@ public class HelloController {
 
     @GetMapping("/hello") // 구 @RequestMapping(method = RequestMethod.GET)
     public String hello() {
-
+        //test code merge
         return "hello";
     }
 
