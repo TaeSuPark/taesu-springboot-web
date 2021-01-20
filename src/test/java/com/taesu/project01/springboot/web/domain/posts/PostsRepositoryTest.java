@@ -1,8 +1,10 @@
 package com.taesu.project01.springboot.web.domain.posts;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import com.taesu.project01.springboot.domain.posts.Posts;
 import com.taesu.project01.springboot.domain.posts.PostsRepository;
+import org.apache.tomcat.jni.Local;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -45,5 +47,28 @@ public class PostsRepositoryTest {
         Posts posts = postsList.get(0);
         assertThat(posts.getTitle()).isEqualTo(title);
         assertThat(posts.getContent()).isEqualTo(content);
+    }
+
+    @Test
+    public void BaseTimeEntity_Regist() {
+
+        // given
+        LocalDateTime now = LocalDateTime.of(2021,1,20,17,7,0);
+        postsRepository.save(Posts.builder()
+        .title("title")
+        .content("content")
+        .author("author")
+        .build());
+
+        // when
+        List<Posts> postsList = postsRepository.findAll();
+
+        // then
+        Posts posts = postsList.get(0);
+
+        System.out.println(">>>>>>>> createDate="+posts.getCreatedDate()+"modifiedDate="+posts.getModifiedDate());
+
+        assertThat(posts.getCreatedDate()).isAfter(now);
+        assertThat(posts.getModifiedDate()).isAfter(now);
     }
 }

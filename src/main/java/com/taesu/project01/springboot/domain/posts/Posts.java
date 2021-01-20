@@ -12,7 +12,7 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor // 기본 생성자 자동 추가
 @Entity // 주요 어노테이션을 클래스에 가까이 -> JPA 어노테이션
-public class Posts { // Entity 클래스에는 Setter 생성 x
+public class Posts extends BaseTimeEntity { // Entity 클래스에는 Setter 생성 x
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
