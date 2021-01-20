@@ -7,9 +7,11 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
+
+//Entity 클래스로 DB 테이블과 매칭 되는 클래스
 @Getter
 @NoArgsConstructor // 기본 생성자 자동 추가
-@Entity // 주요 어노테이션을 클래스에 가까이
+@Entity // 주요 어노테이션을 클래스에 가까이 -> JPA 어노테이션
 public class Posts { // Entity 클래스에는 Setter 생성 x
 
     @Id
