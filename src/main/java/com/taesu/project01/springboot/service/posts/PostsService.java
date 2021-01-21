@@ -30,6 +30,7 @@ public class PostsService {
 
         posts.update(requestDto.getTitle(), requestDto.getContent()); //쿼리를 날리지 않음 -> JPA 영속성 때문
         // 29번째 줄에서 DB에 접근하여 데이터를 가져왔으므로 변경이 있으면 트랜잭션 종료 후 자동 반영
+        // dirty checking
 
         return id;
     }
