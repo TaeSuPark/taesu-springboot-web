@@ -4,7 +4,7 @@ import com.taesu.project01.springboot.domain.posts.Posts;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-
+// save 동작을 수행하기 위한 Dto
 @Getter
 @NoArgsConstructor
 public class PostsSaveRequestDto {
