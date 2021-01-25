@@ -38,6 +38,14 @@ public class PostsService {
 
         return id;
     }
+
+    @Transactional
+    public void delete(Long id) {
+        Posts posts = postsRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id=" + id));
+
+        postsRepository.delete(posts); // Repository 에서 지원하는 delete 메소드가 리턴타입이 void -> return id를 하지 않는 이유 : 삭제되서 의미가 없음
+    }
+
     @Transactional(readOnly = true) // 트랜잭션이지만 조회 기능만 남겨두어 성능 향상을 위해 사용
     public List<PostsListResponseDto> findAllDesc() {
 

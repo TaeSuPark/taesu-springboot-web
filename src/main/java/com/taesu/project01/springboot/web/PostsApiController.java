@@ -32,4 +32,12 @@ public class PostsApiController {
 
         return postsService.findById(id);
     }
+
+    @DeleteMapping("/api/v1/posts/{id}")
+    public Long delete(@PathVariable Long id) {
+
+        postsService.delete(id); // 값을 반환하지 않음
+
+        return id; // Controller에서 void 메소드를 사용하면 Mapping된 url 기반 template을 찾아 반환해주지만 해당 컨트롤러는 api 관련 RestController이기 때문에 void 불가
+    }
 }
