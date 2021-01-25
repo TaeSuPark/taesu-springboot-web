@@ -8,6 +8,7 @@ import com.taesu.project01.springboot.web.dto.PostsUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+// index.js를 통해 사용
 @RequiredArgsConstructor
 @RestController
 public class PostsApiController {
@@ -20,7 +21,7 @@ public class PostsApiController {
         return postsService.save(requestDto);
     }
 
-    @PostMapping("/api/v1/posts/{id}")
+    @PutMapping("/api/v1/posts/{id}")
     public Long update(@PathVariable Long id, @RequestBody PostsUpdateRequestDto requestDto) {
 
         return postsService.update(id, requestDto);
