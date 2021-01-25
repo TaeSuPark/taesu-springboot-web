@@ -1,4 +1,4 @@
-package com.taesu.project01.springboot.domain.posts;
+package com.taesu.project01.springboot.domain;
 
 import lombok.Getter;
 import org.springframework.data.annotation.CreatedDate;

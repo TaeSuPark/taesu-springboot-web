@@ -1,6 +1,7 @@
 package com.taesu.project01.springboot.domain.posts;
 
 
+import com.taesu.project01.springboot.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

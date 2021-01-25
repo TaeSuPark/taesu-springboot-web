@@ -24,7 +24,7 @@ public class IndexControllerTest {
         String body = this.restTemplate.getForObject("/", String.class);
 
         //then
-        assertThat(body).contains("Start Page in Spring boot with Mustache");
+        assertThat(body).contains("스프링부트로 시작하는 웹 서비스");
     }
 
 }
