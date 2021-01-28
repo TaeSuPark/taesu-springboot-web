@@ -34,6 +34,7 @@ public class PostsApiController {
         return postsService.findById(id);
     }
 
+    // 삭제 기능은 DeleteMapping 사용
     @DeleteMapping("/api/v1/posts/{id}")
     public Long delete(@PathVariable Long id) {
 
