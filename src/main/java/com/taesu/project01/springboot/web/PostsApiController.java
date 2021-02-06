@@ -9,7 +9,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 // index.js를 통해 사용
-// Rest 규약에 맞춰 Mapping 사용
+// Rest 규약에 맞춰 Mapping 사용 -> CRUD에 따라 Post, Put, Get, Delete를 사용
 @RequiredArgsConstructor
 @RestController
 public class PostsApiController {
