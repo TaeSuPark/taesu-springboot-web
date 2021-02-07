@@ -40,7 +40,7 @@ var main = {
         };
 
         var id = $('#id').val();
-
+// REST 규약에 따른 타입 설정
         $.ajax({
             type: 'PUT',
             url: '/api/v1/posts/'+id,
